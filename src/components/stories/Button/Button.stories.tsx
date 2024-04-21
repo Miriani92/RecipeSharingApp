@@ -1,15 +1,12 @@
 import {View} from 'react-native';
 import type {Meta, StoryObj} from '@storybook/react';
-import {MyButton} from './Button';
+import {PrimaryButton} from '../../atoms/PrimaryButton';
 
-const MyButtonMeta: Meta<typeof MyButton> = {
-  title: 'MyButton',
-  component: MyButton,
-  argTypes: {
-    onPress: {action: 'pressed the button'},
-  },
+const MyButtonMeta: Meta<typeof PrimaryButton> = {
+  title: 'Button',
+  component: PrimaryButton,
   args: {
-    text: 'Hello world',
+    text: 'Get Started',
   },
   decorators: [
     Story => (
@@ -21,11 +18,4 @@ const MyButtonMeta: Meta<typeof MyButton> = {
 };
 
 export default MyButtonMeta;
-
-export const Basic: StoryObj<typeof MyButton> = {};
-
-export const AnotherExample: StoryObj<typeof MyButton> = {
-  args: {
-    text: 'helloButton',
-  },
-};
+export const Primary: StoryObj<typeof PrimaryButton> = {};

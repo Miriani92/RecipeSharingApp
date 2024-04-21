@@ -8,8 +8,10 @@ import {App} from './src/App';
 import {name as appName} from './app.json';
 
 let AppEntryPoint = App;
+
 // make it true to render storybook
 // let isStoryBook = false;
+
 let isStoryBook = true;
 
 if (isStoryBook) {
