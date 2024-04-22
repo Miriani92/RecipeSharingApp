@@ -1,10 +1,6 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Home} from './containers/guest/Home';
 
 export const App = () => {
-  return (
-    <View>
-      <Text>hello react native</Text>
-    </View>
-  );
+  return <Home />;
 };
