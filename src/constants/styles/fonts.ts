@@ -2,7 +2,7 @@ import {isIOS} from '../../utils/getPlatform';
 export const fontFamilies = {
   DancingScript: {
     normal: isIOS() ? 'DancingScript-Regular' : 'DancingScriptRegular',
-    bold: isIOS() ? 'DancingScript-Bold' : ' DancingScriptBold',
+    bold: isIOS() ? 'DancingScript-Bold' : 'DancingScriptBold',
   },
   //   RUBIK: {
   //     normal: isIOS() ? 'Rubik-Regular' : 'RubikRegular',

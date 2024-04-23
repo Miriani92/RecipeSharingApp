@@ -23,12 +23,12 @@ export const Home = () => {
       <PrimaryButton
         backgroundColor={colors.dark_red}
         textColor="white"
-        text="Get Start"
+        text="Get Started"
         onPress={() => console.log('here')}
         style={styles.buttonStyle}
       />
       <View style={styles.singInWrapper}>
-        <Text style={{fontSize: sizes.bs}}>Already have an account?</Text>
+        <Text style={{fontSize: sizes.bs}}>Already have an account? </Text>
         <SignInButton
           onPress={() => console.log('pressed')}
           text="Sign in"

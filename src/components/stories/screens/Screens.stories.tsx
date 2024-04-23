@@ -1,7 +1,7 @@
 import React from 'react';
 import type {StoryObj} from '@storybook/react';
 import {getMeta} from '../utils/getMeta';
-import {Home as HomeScreen} from '../../../containers/guest/Home';
+import {Home as HomeScreen} from '../../../containers/onboarding/Home';
 
 const PrimaryButtonMeta = getMeta(HomeScreen, {
   title: 'Screens',

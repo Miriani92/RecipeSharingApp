@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button} from 'react-native';
+import {TouchableOpacity, Text} from 'react-native';
+import {sizes} from '../../constants/styles/sizes';
 
 type SignInButtonProps = {
   text: string;
@@ -12,5 +13,9 @@ export const SignInButton: React.FC<SignInButtonProps> = ({
   onPress,
   color = 'blue',
 }) => {
-  return <Button title={text} onPress={onPress} color={color} />;
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Text style={{color, fontSize: sizes.bs}}>{text}</Text>
+    </TouchableOpacity>
+  );
 };

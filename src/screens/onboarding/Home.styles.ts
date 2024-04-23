@@ -7,14 +7,18 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  wrapper: {flex: 0.7, width: '100%'},
+  wrapper: {
+    flex: 1,
+    width: '100%',
+  },
   text: {
     fontFamily: getFontFamily('bold'),
     fontSize: sizes.xlarger * 2,
     zIndex: 999,
+    color: 'black',
   },
   textWrapper: {
-    transform: [{translateY: -sizes.xlarger + -sizes.md}],
+    transform: [{translateY: -sizes.xlarger + -sizes.lg}],
     letterSpacing: sizes.lg,
   },
   description: {
@@ -28,5 +32,6 @@ export const styles = StyleSheet.create({
     marginTop: sizes.xxxlg,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingBottom: sizes.md,
   },
 });

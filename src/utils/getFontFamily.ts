@@ -4,6 +4,5 @@ import {fontFamilies} from '../constants/styles/fonts';
 
 export const getFontFamily = (weight: 'normal' | 'bold') => {
   const selectedFontFamily = fontFamilies.DancingScript;
-  console.log(selectedFontFamily);
   return selectedFontFamily[weight];
 };
