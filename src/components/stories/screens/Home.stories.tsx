@@ -3,11 +3,10 @@ import type {StoryObj} from '@storybook/react';
 import {getMeta} from '../utils/getMeta';
 import {Home as HomeScreen} from '../../../containers/onboarding/Home';
 
-const PrimaryButtonMeta = getMeta(HomeScreen, {
-  title: 'Screens',
+const Meta = getMeta(HomeScreen, {
   decorator: [(Story: any) => <Story />],
 });
 
-export default PrimaryButtonMeta;
+export default Meta;
 
 export const Home: StoryObj<typeof HomeScreen> = {};

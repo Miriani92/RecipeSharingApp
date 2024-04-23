@@ -10,9 +10,9 @@ import {name as appName} from './app.json';
 let AppEntryPoint = App;
 
 // make it true to render storybook
-let isStoryBook = false;
+// let isStoryBook = false;
 
-// let isStoryBook = true;
+let isStoryBook = true;
 
 if (isStoryBook) {
   AppEntryPoint = Storybook;

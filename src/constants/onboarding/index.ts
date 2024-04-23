@@ -1,0 +1,1 @@
+export const ONBOARDING_SCREENS_QUANTITY = 4;
