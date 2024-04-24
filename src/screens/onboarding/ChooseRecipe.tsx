@@ -30,7 +30,7 @@ export const ChooseRecipe = () => {
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
-        <OnboardingProgress activeIndex={4} />
+        <OnboardingProgress activeIndex={3} />
         <View>
           <Text style={styles.header}>Choose at least 3 recipes you like!</Text>
           <Text style={styles.subHeader}>
