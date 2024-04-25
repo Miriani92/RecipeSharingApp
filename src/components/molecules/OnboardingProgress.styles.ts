@@ -21,4 +21,5 @@ export const styles = StyleSheet.create({
   bar: {
     height: sizes.sm,
   },
+  text: {color: 'white'},
 });

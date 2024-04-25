@@ -1,17 +1,15 @@
 import React from 'react';
 import CheckBox from 'react-native-bouncy-checkbox';
 
-export const Checkbox = () => {
+export const Checkbox = ({fillColor, isChecked, onPress}: any) => {
   return (
     <CheckBox
       size={32}
-      fillColor="red"
-      unFillColor="red"
+      fillColor={fillColor}
+      unFillColor={fillColor}
       textStyle={{fontFamily: 'JosefinSans-Regular'}}
-      isChecked={true}
-      onPress={(isChecked: boolean) => {
-        console.log(isChecked);
-      }}
+      isChecked={isChecked}
+      onPress={onPress}
     />
   );
 };

@@ -4,6 +4,7 @@ import {sizes} from '../../constants/styles/sizes';
 
 export const styles = StyleSheet.create({
   wrapper: {
+    position: 'relative',
     alignSelf: 'center',
     backgroundColor: colors.background_onboarding,
     flex: 1,
@@ -22,5 +23,11 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.background_recipedescription,
     fontWeight: '700',
     color: 'white',
+  },
+  checkboxWrapper: {
+    position: 'absolute',
+    top: sizes.sm,
+    left: sizes.sm,
+    zIndex: 999,
   },
 });

@@ -26,4 +26,13 @@ export const styles = StyleSheet.create({
     color: 'white',
     marginTop: sizes.sm,
   },
+  buttonWrapper: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    backgroundColor: colors.background_onboarding,
+    paddingVertical: sizes.md,
+    alignItems: 'center',
+  },
 });

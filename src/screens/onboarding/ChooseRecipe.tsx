@@ -6,6 +6,9 @@ import {Recipe} from '../../components/molecules/Recipe';
 import {Text} from 'react-native';
 import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
 import {OnboardingProgress} from '../../components/molecules/OnboardingProgress';
+import {PrimaryButton} from '../../components/atoms/PrimaryButton';
+import {colors} from '../../constants/styles/colors';
+import {PopupAnimation} from '../../components/animations/PopupAnimation';
 
 const choiceRecipeData = [
   {
@@ -26,28 +29,60 @@ const choiceRecipeData = [
   },
 ];
 
-export const ChooseRecipe = () => {
+export const ChooseRecipe = ({
+  setRecipes,
+  handleCheckActiveRecipes,
+  isGoNext,
+}: any) => {
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
         <OnboardingProgress activeIndex={3} />
         <View>
-          <Text style={styles.header}>Choose at least 3 recipes you like!</Text>
+          <Text style={styles.header}>Choose at least 2 recipes you like!</Text>
           <Text style={styles.subHeader}>
             This will help us show you right recipes
           </Text>
         </View>
         <View style={styles.recipeWrapper}>
           {choiceRecipeData.slice(0, 2).map(item => {
-            return <Recipe key={item.title} {...item} />;
+            let isChecked = handleCheckActiveRecipes(item.title);
+            return (
+              <Recipe
+                key={item.title}
+                {...item}
+                onPress={setRecipes}
+                isChecked={isChecked}
+              />
+            );
           })}
         </View>
         <View style={styles.recipeWrapper}>
           {choiceRecipeData.slice(2).map(item => {
-            return <Recipe key={item.title} {...item} />;
+            let isChecked = handleCheckActiveRecipes(item.title);
+            return (
+              <Recipe
+                key={item.title}
+                {...item}
+                onPress={setRecipes}
+                isChecked={isChecked}
+              />
+            );
           })}
         </View>
       </View>
+      {isGoNext && (
+        <PopupAnimation defaultOffset={100} getToValue={0}>
+          <View style={styles.buttonWrapper}>
+            <PrimaryButton
+              backgroundColor={colors.dark_red}
+              textColor="white"
+              text="Next"
+              onPress={() => console.log('go next')}
+            />
+          </View>
+        </PopupAnimation>
+      )}
     </SafeAreaContainer>
   );
 };

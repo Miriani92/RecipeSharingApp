@@ -9,6 +9,7 @@ import Animated, {
   withTiming,
   Easing,
 } from 'react-native-reanimated';
+import {colors} from '../../constants/styles/colors';
 
 type OnboardingProgressProps = {
   activeIndex: number;
@@ -56,7 +57,7 @@ export const OnboardingProgress = ({
     let isRightBorderRadius = currentIndex === ONBOARDING_SCREENS_QUANTITY - 1;
     let applyAnimation = activeIndex - currentIndex === 1;
     if (currentIndex + 1 <= activeIndex) {
-      backgroundColor = 'grey';
+      backgroundColor = colors.background_progress;
     }
     let props = {
       backgroundColor,
@@ -71,7 +72,7 @@ export const OnboardingProgress = ({
 
   return (
     <View style={styles.wrapper}>
-      <Text style={{color: 'white'}}>
+      <Text style={styles.text}>
         {activeIndex} of {ONBOARDING_SCREENS_QUANTITY}
       </Text>
       <View style={styles.progressWrapper} onLayout={onLayout}>

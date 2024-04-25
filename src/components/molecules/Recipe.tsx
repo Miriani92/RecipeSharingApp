@@ -1,18 +1,31 @@
 import React from 'react';
-import {Image, Text} from 'react-native';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import {styles} from './Recipe.styles';
 import {View} from 'react-native';
+import {Checkbox} from '../../components/atoms/Checkbox';
 
 type RecipeProps = {
   image: any;
   title: string;
+  onPress: (arg: any) => void;
+  isChecked: boolean;
 };
 
-export const Recipe = ({image, title}: RecipeProps) => {
+export const Recipe = ({image, title, onPress, isChecked}: RecipeProps) => {
+  const handlePressRecipe = () => {
+    onPress(title);
+  };
   return (
-    <View style={styles.wrapper}>
+    <TouchableOpacity onPress={handlePressRecipe} style={styles.wrapper}>
+      <View style={styles.checkboxWrapper}>
+        <Checkbox
+          fillColor="grey"
+          isChecked={isChecked}
+          onPress={handlePressRecipe}
+        />
+      </View>
       <Image source={image} style={styles.image} resizeMode="cover" />
       <Text style={styles.title}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
