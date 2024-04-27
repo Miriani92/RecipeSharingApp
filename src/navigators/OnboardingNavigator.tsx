@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {Home} from '../containers/onboarding/Home';
 import {ChooseRecipe} from '../containers/onboarding/ChooseRecipe';
 import {Vegetarian} from '../containers/onboarding/Vegetarian';
+import {WhatsImportant} from '../containers/onboarding/WhatsImportant';
 
 export const OnboardingNavigator = () => {
   const Stack = createStackNavigator();
@@ -19,10 +20,15 @@ export const OnboardingNavigator = () => {
         name="ChooseRecipe"
         component={ChooseRecipe}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         options={{headerShown: false}}
         name="Vegetarian"
         component={Vegetarian}
+      /> */}
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Vegetarian"
+        component={WhatsImportant}
       />
     </Stack.Navigator>
   );
