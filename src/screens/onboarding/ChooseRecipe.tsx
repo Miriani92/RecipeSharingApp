@@ -33,6 +33,7 @@ export const ChooseRecipe = ({
   setRecipes,
   handleCheckActiveRecipes,
   isGoNext,
+  navigate,
 }: any) => {
   return (
     <SafeAreaContainer>
@@ -78,7 +79,7 @@ export const ChooseRecipe = ({
               backgroundColor={colors.dark_red}
               textColor="white"
               text="Next"
-              onPress={() => console.log('go next')}
+              onPress={() => navigate()}
             />
           </View>
         </PopupAnimation>

@@ -11,26 +11,26 @@ export const OnboardingNavigator = () => {
 
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
+      <Stack.Screen
         options={{headerShown: false}}
         name="Home"
         component={Home}
-      /> */}
-      {/* <Stack.Screen
+      />
+      <Stack.Screen
         options={{headerShown: false}}
         name="ChooseRecipe"
         component={ChooseRecipe}
-      /> */}
-      {/* <Stack.Screen
+      />
+      <Stack.Screen
         options={{headerShown: false}}
         name="Vegetarian"
         component={Vegetarian}
-      /> */}
-      {/* <Stack.Screen
+      />
+      <Stack.Screen
         options={{headerShown: false}}
-        name="Vegetarian"
+        name="WhatsImportant"
         component={WhatsImportant}
-      /> */}
+      />
       <Stack.Screen
         options={{headerShown: false}}
         name="Personalize"

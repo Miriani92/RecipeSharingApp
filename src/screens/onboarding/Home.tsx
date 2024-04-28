@@ -6,15 +6,19 @@ import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {colors} from '../../constants/styles/colors';
 import {SignInButton} from '../../components/atoms/SignInButton';
 import {sizes} from '../../constants/styles/sizes';
+import {useIsFocused} from '@react-navigation/native';
 
-export const Home = () => {
+export const Home = ({navigate}: any) => {
+  const isFocused = useIsFocused();
+
   return (
     <View style={styles.videWrapper}>
       <Video
         source={require('../../assets/videos/sample_video.mp4')}
         style={styles.wrapper}
         resizeMode="cover"
-        controls
+        controls={false}
+        paused={!isFocused}
       />
       <View style={styles.textWrapper}>
         <Text style={styles.text}>Tasty</Text>
@@ -24,7 +28,7 @@ export const Home = () => {
         backgroundColor={colors.dark_red}
         textColor="white"
         text="Get Started"
-        onPress={() => console.log('here')}
+        onPress={() => navigate()}
         style={styles.buttonStyle}
       />
       <View style={styles.singInWrapper}>

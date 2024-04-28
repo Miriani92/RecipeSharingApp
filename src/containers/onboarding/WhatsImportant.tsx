@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import {WhatsImportant as WhatsImportantScreen} from '../../screens/onboarding/WhatsImportant';
+import {useNavigation} from '@react-navigation/native';
 
 export const WhatsImportant = () => {
   const [options, setOptions] = useState<any>([]);
+  const navigation = useNavigation<any>();
+
+  const navigateNextScreen = () => {
+    navigation.navigate('ChooseRecipe');
+  };
 
   const handleCheckActiveOptions = (currentTItle: string) => {
     let isRecipe = options.includes(currentTItle);
@@ -21,11 +27,12 @@ export const WhatsImportant = () => {
     }
     setOptions((r: any) => [...r, currentOption]);
   };
-  console.log(options);
+
   return (
     <WhatsImportantScreen
       setOptions={handleSetOptions}
       handleCheckActiveOptions={handleCheckActiveOptions}
+      navigate={navigateNextScreen}
       isOptionChosen={options.length === 2}
     />
   );

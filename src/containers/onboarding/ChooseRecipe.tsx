@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
 import {ChooseRecipe as ChooseRecipeScreen} from '../../screens/onboarding/ChooseRecipe';
+import {useNavigation} from '@react-navigation/native';
 
 export const ChooseRecipe = () => {
   const [recipes, setRecipes] = useState<any>([]);
+
+  const navigation = useNavigation<any>();
+
+  const navigateNextScreen = () => {
+    navigation.navigate('Personalize');
+  };
 
   const handleCheckActiveRecipes = (currentTItle: string) => {
     let isRecipe = recipes.includes(currentTItle);
@@ -26,6 +33,7 @@ export const ChooseRecipe = () => {
       recipes={recipes}
       handleCheckActiveRecipes={handleCheckActiveRecipes}
       isGoNext={recipes.length > 1}
+      navigate={navigateNextScreen}
     />
   );
 };

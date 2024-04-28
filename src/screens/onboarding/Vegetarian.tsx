@@ -6,22 +6,18 @@ import {OnboardingProgress} from '../../components/molecules/OnboardingProgress'
 import {images} from '../../constants/images/images';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-export const Vegetarian = () => {
+export const Vegetarian = ({navigate}: any) => {
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
         <OnboardingProgress activeIndex={1} />
         <Text style={styles.subHeader}>A ew quick questions: </Text>
         <Text style={styles.header}>Are you a vegetarian</Text>
-        <TouchableOpacity
-          style={styles.option}
-          onPress={() => console.log('option_pressed')}>
+        <TouchableOpacity style={styles.option} onPress={() => navigate()}>
           <Image source={images.hamburger} style={styles.image} />
           <Text style={styles.text}>Nope show me all recipes</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.option}
-          onPress={() => console.log('option_pressed')}>
+        <TouchableOpacity style={styles.option} onPress={() => navigate()}>
           <Image source={images.avocado} style={styles.image} />
           <Text style={styles.text}>Yes, hide recipes with meat</Text>
         </TouchableOpacity>

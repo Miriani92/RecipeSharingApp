@@ -19,11 +19,12 @@ export const WhatsImportant = ({
   setOptions,
   handleCheckActiveOptions,
   isOptionChosen,
+  navigate,
 }: any) => {
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
-        <OnboardingProgress activeIndex={3} />
+        <OnboardingProgress activeIndex={2} />
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
             What's most important to you when cooking?
@@ -52,7 +53,7 @@ export const WhatsImportant = ({
               backgroundColor={colors.dark_red}
               textColor="white"
               text="Next"
-              onPress={() => console.log('go next')}
+              onPress={() => navigate()}
             />
           </View>
         </PopupAnimation>
