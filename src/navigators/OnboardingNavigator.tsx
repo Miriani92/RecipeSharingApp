@@ -4,6 +4,7 @@ import {Home} from '../containers/onboarding/Home';
 import {ChooseRecipe} from '../containers/onboarding/ChooseRecipe';
 import {Vegetarian} from '../containers/onboarding/Vegetarian';
 import {WhatsImportant} from '../containers/onboarding/WhatsImportant';
+import {Personalize} from '../containers/onboarding/Personalize';
 
 export const OnboardingNavigator = () => {
   const Stack = createStackNavigator();
@@ -25,10 +26,15 @@ export const OnboardingNavigator = () => {
         name="Vegetarian"
         component={Vegetarian}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         options={{headerShown: false}}
         name="Vegetarian"
         component={WhatsImportant}
+      /> */}
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Personalize"
+        component={Personalize}
       />
     </Stack.Navigator>
   );
