@@ -1,6 +1,6 @@
-import React, {useCallback, useState} from 'react';
+import React from 'react';
 import {ONBOARDING_SCREENS_QUANTITY} from '../../constants/onboarding';
-import {View, Text} from 'react-native';
+import {View, Text, Dimensions} from 'react-native';
 import {styles} from './OnboardingProgress.styles';
 import {sizes} from '../../constants/styles/sizes';
 import Animated, {
@@ -14,18 +14,18 @@ import {colors} from '../../constants/styles/colors';
 type OnboardingProgressProps = {
   activeIndex: number;
 };
+const {width: screenWidth} = Dimensions.get('window');
+const stepsWidth = 50;
 
 export const OnboardingProgress = ({
   activeIndex = 0,
 }: OnboardingProgressProps) => {
   const views = Array.from({length: ONBOARDING_SCREENS_QUANTITY}).fill(0);
-  const [width, setWidth] = useState(0);
-  let animatedWidth = useSharedValue(0);
+  const width =
+    Math.ceil(screenWidth - sizes.sm - stepsWidth - (screenWidth * 10) / 100) /
+    ONBOARDING_SCREENS_QUANTITY;
 
-  const onLayout = useCallback((event: any) => {
-    const {width: currentWidth} = event.nativeEvent.layout;
-    setWidth(() => Math.ceil(currentWidth / ONBOARDING_SCREENS_QUANTITY));
-  }, []);
+  let animatedWidth = useSharedValue(0);
 
   const animatedStyle = useAnimatedStyle(() => {
     animatedWidth.value = width;
@@ -71,11 +71,11 @@ export const OnboardingProgress = ({
   };
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper]}>
       <Text style={styles.text}>
         {activeIndex} of {ONBOARDING_SCREENS_QUANTITY}
       </Text>
-      <View style={styles.progressWrapper} onLayout={onLayout}>
+      <View style={styles.progressWrapper}>
         {views.map((_, currentIndex) => {
           const {applyAnimation, dynamicStyle} =
             handleRenderAnimatedViews(currentIndex);

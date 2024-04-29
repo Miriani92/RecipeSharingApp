@@ -4,7 +4,6 @@ import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {styles} from './Personalize.styles';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
 import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
-import {OnboardingProgress} from '../../components/molecules/OnboardingProgress';
 import {colors} from '../../constants/styles/colors';
 import {images} from '../../constants/images/images';
 import Animated from 'react-native-reanimated';
@@ -37,7 +36,6 @@ export const Personalize = () => {
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
-        <OnboardingProgress activeIndex={4} />
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
             Personalize your experience by creating account

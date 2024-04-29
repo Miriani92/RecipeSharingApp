@@ -3,7 +3,6 @@ import {Text, View} from 'react-native';
 import {styles} from './WhatsImportant.styles';
 import {colors} from '../../constants/styles/colors';
 import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
-import {OnboardingProgress} from '../../components/molecules/OnboardingProgress';
 import {Option} from '../../components/molecules/Option';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
@@ -24,7 +23,6 @@ export const WhatsImportant = ({
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
-        <OnboardingProgress activeIndex={2} />
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
             What's most important to you when cooking?

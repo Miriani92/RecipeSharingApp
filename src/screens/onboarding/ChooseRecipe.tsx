@@ -5,7 +5,6 @@ import {images} from '../../constants/images/images';
 import {Recipe} from '../../components/molecules/Recipe';
 import {Text} from 'react-native';
 import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
-import {OnboardingProgress} from '../../components/molecules/OnboardingProgress';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {colors} from '../../constants/styles/colors';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
@@ -38,7 +37,6 @@ export const ChooseRecipe = ({
   return (
     <SafeAreaContainer>
       <View style={styles.wrapper}>
-        <OnboardingProgress activeIndex={3} />
         <View>
           <Text style={styles.header}>Choose at least 2 recipes you like!</Text>
           <Text style={styles.subHeader}>
