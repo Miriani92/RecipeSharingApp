@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 import {styles} from './PrimaryButton.styles';
 import {ActivityIndicator} from 'react-native';
-import {colors} from '../../constants/styles/colors';
 
 export type ButtonProps = {
   text: string;

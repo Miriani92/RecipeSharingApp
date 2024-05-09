@@ -9,4 +9,5 @@ export const images = {
   signin: require('../../assets/images/signin.png'),
   check: require('../../assets/images/check.png'),
   close: require('../../assets/images/close.png'),
+  back: require('../../assets/images/back.png'),
 };

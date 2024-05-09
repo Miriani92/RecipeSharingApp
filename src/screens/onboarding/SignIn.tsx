@@ -4,6 +4,8 @@ import {View, Image, Text, TextInput} from 'react-native';
 import {images} from '../../constants/images/images';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {colors} from '../../constants/styles/colors';
+import {BackButton} from '../../components/molecules/BackButton';
+import {useNavigation} from '@react-navigation/native';
 
 export const SignIn = ({
   handleSetEmail,
@@ -18,10 +20,12 @@ export const SignIn = ({
   handleFocusOnEmail,
   handleFocusOnPassword,
 }: any) => {
+  const navigation = useNavigation<any>();
   const isFormValid = email.isValid && password.isValid;
   return (
     <View style={styles.wrapper}>
       <View style={styles.upper}>
+        <BackButton onPress={() => navigation.goBack()} />
         <Image source={images.signin} style={styles.image} />
       </View>
 

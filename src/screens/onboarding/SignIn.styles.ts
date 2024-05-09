@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     paddingBottom: sizes.lg,
   },
   upper: {
+    position: 'relative',
     flex: 1.5,
   },
   image: {
