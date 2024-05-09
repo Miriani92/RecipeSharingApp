@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 import {styles} from './PrimaryButton.styles';
+import {ActivityIndicator} from 'react-native';
+import {colors} from '../../constants/styles/colors';
 
 export type ButtonProps = {
   text: string;
@@ -8,6 +10,8 @@ export type ButtonProps = {
   backgroundColor: string;
   onPress: () => void;
   style?: any;
+  disable?: boolean;
+  isLoading?: boolean;
 };
 
 export const PrimaryButton: FC<ButtonProps> = ({
@@ -16,12 +20,19 @@ export const PrimaryButton: FC<ButtonProps> = ({
   textColor = 'white',
   backgroundColor = 'green',
   style = {},
+  disable = false,
+  isLoading = false,
 }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
+      disabled={disable}
       style={[styles.wrapper, {backgroundColor, ...style}]}>
-      <Text style={[styles.text, {color: textColor}]}>{text}</Text>
+      {isLoading ? (
+        <ActivityIndicator size="small" />
+      ) : (
+        <Text style={[styles.text, {color: textColor}]}>{text}</Text>
+      )}
     </TouchableOpacity>
   );
 };

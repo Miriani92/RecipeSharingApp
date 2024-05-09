@@ -4,8 +4,8 @@ import {useNavigation} from '@react-navigation/native';
 
 export const Home = () => {
   const navigation = useNavigation<any>();
-  const navigateNextScreen = () => {
-    navigation.navigate('Vegetarian');
+  const navigateNextScreen = (screen: string) => {
+    navigation.navigate(screen);
   };
   return <HomeScreen navigate={navigateNextScreen} />;
 };

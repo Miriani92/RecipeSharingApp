@@ -5,6 +5,7 @@ import {ChooseRecipe} from '../containers/onboarding/ChooseRecipe';
 import {Vegetarian} from '../containers/onboarding/Vegetarian';
 import {WhatsImportant} from '../containers/onboarding/WhatsImportant';
 import {Personalize} from '../containers/onboarding/Personalize';
+import {SignIn} from '../containers/onboarding/SignIn';
 import {OnboardingProgress} from '../components/molecules/OnboardingProgress';
 
 export const OnboardingNavigator = () => {
@@ -43,6 +44,11 @@ export const OnboardingNavigator = () => {
         name="Personalize"
         component={Personalize}
         initialParams={{activeIndex: 4}}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="SignIn"
+        component={SignIn}
       />
     </Stack.Navigator>
   );

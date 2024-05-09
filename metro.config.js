@@ -41,8 +41,10 @@ const defaultConfig = getDefaultConfig(__dirname);
 const config = {
   transformer: {
     unstable_allowRequireContext: true,
+    // babelTransformerPath: require.resolve('react-native-svg-transformer'),
   },
   resolver: {
+    // assetExts: defaultConfig.resolver.assetExts.filter(ext => ext !== 'svg'),
     sourceExts: [...defaultConfig.resolver.sourceExts, 'mjs'],
   },
 };

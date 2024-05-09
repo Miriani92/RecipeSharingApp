@@ -6,4 +6,7 @@ export const images = {
   hamburger: require('../../assets/images/hamburger.png'),
   avocado: require('../../assets/images/avocado.png'),
   pizza: require('../../assets/images/pizza.png'),
+  signin: require('../../assets/images/signin.png'),
+  check: require('../../assets/images/check.png'),
+  close: require('../../assets/images/close.png'),
 };
