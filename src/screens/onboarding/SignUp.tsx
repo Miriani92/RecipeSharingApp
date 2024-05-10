@@ -1,5 +1,5 @@
-import React from 'react';
-import {styles} from './SignIn.styles';
+import React, {useEffect} from 'react';
+import {styles} from './SignUp.styles';
 import {View, Image, Text, TextInput} from 'react-native';
 import {images} from '../../constants/images/images';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
@@ -7,7 +7,7 @@ import {colors} from '../../constants/styles/colors';
 import {BackButton} from '../../components/molecules/BackButton';
 import {useNavigation} from '@react-navigation/native';
 
-export const SignIn = ({
+export const SignUp = ({
   handleSetEmail,
   handleSetPassword,
   email,
@@ -25,8 +25,7 @@ export const SignIn = ({
   return (
     <View style={styles.wrapper}>
       <View style={styles.upper}>
-        <BackButton onPress={() => navigation.goBack()} />
-        <Image source={images.signin} style={styles.image} />
+        <Image source={images.signup} style={styles.image} />
       </View>
       <View style={styles.form}>
         <Text style={styles.header}>Welcome to RecipeSharing App</Text>
@@ -84,7 +83,7 @@ export const SignIn = ({
             !email.focused &&
             !password.focused && (
               <Text style={{color: 'purple', textAlign: 'right'}}>
-                Wrong Credentials
+                Something Went Wrong
               </Text>
             )}
         </View>

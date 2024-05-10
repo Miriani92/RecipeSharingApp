@@ -3,7 +3,6 @@ import {styles} from './Home.styles';
 import Video from 'react-native-video';
 import {Text, View} from 'react-native';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
-import {useNavigation} from '@react-navigation/native';
 import {colors} from '../../constants/styles/colors';
 import {SignInButton} from '../../components/atoms/SignInButton';
 import {sizes} from '../../constants/styles/sizes';

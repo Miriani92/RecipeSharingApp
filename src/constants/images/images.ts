@@ -10,4 +10,5 @@ export const images = {
   check: require('../../assets/images/check.png'),
   close: require('../../assets/images/close.png'),
   back: require('../../assets/images/back.png'),
+  signup: require('../../assets/images/signup.png'),
 };

@@ -4,6 +4,7 @@ import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {styles} from './Personalize.styles';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
 import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
+import {useNavigation} from '@react-navigation/native';
 import {colors} from '../../constants/styles/colors';
 import {images} from '../../constants/images/images';
 import Animated from 'react-native-reanimated';
@@ -16,6 +17,7 @@ import {
 
 export const Personalize = () => {
   const scale = useSharedValue(0);
+  const navigation = useNavigation<any>();
 
   const startAnimation = useCallback(() => {
     scale.value = withTiming(1, {
@@ -57,8 +59,8 @@ export const Personalize = () => {
           <PrimaryButton
             backgroundColor={colors.dark_red}
             textColor="white"
-            text="Next"
-            onPress={() => console.log('go next')}
+            text="Sign Up"
+            onPress={() => navigation.navigate('SignUp')}
           />
         </View>
       </PopupAnimation>

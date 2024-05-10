@@ -7,10 +7,10 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: sizes.lg,
     left: '5%',
-    width: 40,
-    height: 40,
+    width: 32,
+    height: 32,
     padding: sizes.xsm,
-    borderRadius: 40 / 2,
+    borderRadius: 32 / 2,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.background_onboarding,
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     resizeMode: 'cover',
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
   },
 });

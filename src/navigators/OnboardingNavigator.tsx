@@ -6,6 +6,7 @@ import {Vegetarian} from '../containers/onboarding/Vegetarian';
 import {WhatsImportant} from '../containers/onboarding/WhatsImportant';
 import {Personalize} from '../containers/onboarding/Personalize';
 import {SignIn} from '../containers/onboarding/SignIn';
+import {SignUp} from '../containers/onboarding/SignUp';
 import {OnboardingProgress} from '../components/molecules/OnboardingProgress';
 
 export const OnboardingNavigator = () => {
@@ -14,17 +15,16 @@ export const OnboardingNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        header: ({route, options}: any) => {
+        header: ({route}: any) => {
           return <OnboardingProgress activeIndex={route.params?.activeIndex} />;
         },
-        headerMode: 'float',
+        headerMode: 'screen',
       }}>
       <Stack.Screen
         options={{headerShown: false}}
         name="Home"
         component={Home}
       />
-
       <Stack.Screen
         name="Vegetarian"
         component={Vegetarian}
@@ -46,9 +46,14 @@ export const OnboardingNavigator = () => {
         initialParams={{activeIndex: 4}}
       />
       <Stack.Screen
-        options={{headerShown: false}}
         name="SignIn"
         component={SignIn}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
