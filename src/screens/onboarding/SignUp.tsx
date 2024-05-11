@@ -1,11 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {styles} from './SignUp.styles';
 import {View, Image, Text, TextInput} from 'react-native';
 import {images} from '../../constants/images/images';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {colors} from '../../constants/styles/colors';
-import {BackButton} from '../../components/molecules/BackButton';
-import {useNavigation} from '@react-navigation/native';
 
 export const SignUp = ({
   handleSetEmail,
@@ -20,7 +18,6 @@ export const SignUp = ({
   handleFocusOnEmail,
   handleFocusOnPassword,
 }: any) => {
-  const navigation = useNavigation<any>();
   const isFormValid = email.isValid && password.isValid;
   return (
     <View style={styles.wrapper}>

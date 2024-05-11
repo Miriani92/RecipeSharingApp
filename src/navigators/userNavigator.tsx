@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Text} from 'react-native';
+import {Home} from '../containers/inapp/Home';
 
 export const UserNavigator = () => {
   const Stack = createStackNavigator();
@@ -9,7 +9,7 @@ export const UserNavigator = () => {
       <Stack.Screen
         options={{headerShown: false}}
         name="Home"
-        component={() => <Text>Hello User</Text>}
+        component={Home}
       />
     </Stack.Navigator>
   );
