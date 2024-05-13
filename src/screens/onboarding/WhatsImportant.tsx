@@ -1,8 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import {styles} from './WhatsImportant.styles';
 import {colors} from '../../constants/styles/colors';
-import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
 import {Option} from '../../components/molecules/Option';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
@@ -21,7 +20,8 @@ export const WhatsImportant = ({
   navigate,
 }: any) => {
   return (
-    <SafeAreaContainer>
+    <SafeAreaView
+      style={{backgroundColor: colors.background_onboarding, flex: 1}}>
       <View style={styles.wrapper}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
@@ -56,6 +56,6 @@ export const WhatsImportant = ({
           </View>
         </PopupAnimation>
       )}
-    </SafeAreaContainer>
+    </SafeAreaView>
   );
 };

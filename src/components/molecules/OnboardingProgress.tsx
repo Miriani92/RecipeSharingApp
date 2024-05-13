@@ -1,6 +1,6 @@
 import React from 'react';
 import {ONBOARDING_SCREENS_QUANTITY} from '../../constants/onboarding';
-import {View, Text, Dimensions} from 'react-native';
+import {View, Text, Dimensions, SafeAreaView} from 'react-native';
 import {styles} from './OnboardingProgress.styles';
 import {sizes} from '../../constants/styles/sizes';
 import Animated, {
@@ -71,26 +71,28 @@ export const OnboardingProgress = ({
   };
 
   return (
-    <View style={[styles.wrapper]}>
-      <Text style={styles.text}>
-        {activeIndex} of {ONBOARDING_SCREENS_QUANTITY}
-      </Text>
-      <View style={styles.progressWrapper}>
-        {views.map((_, currentIndex) => {
-          const {applyAnimation, dynamicStyle} =
-            handleRenderAnimatedViews(currentIndex);
-          return (
-            <Animated.View
-              key={currentIndex}
-              style={[
-                styles.bar,
-                dynamicStyle,
-                applyAnimation ? animatedStyle : {width},
-              ]}
-            />
-          );
-        })}
+    <SafeAreaView style={{backgroundColor: colors.background_onboarding}}>
+      <View style={[styles.wrapper]}>
+        <Text style={styles.text}>
+          {activeIndex} of {ONBOARDING_SCREENS_QUANTITY}
+        </Text>
+        <View style={styles.progressWrapper}>
+          {views.map((_, currentIndex) => {
+            const {applyAnimation, dynamicStyle} =
+              handleRenderAnimatedViews(currentIndex);
+            return (
+              <Animated.View
+                key={currentIndex}
+                style={[
+                  styles.bar,
+                  dynamicStyle,
+                  applyAnimation ? animatedStyle : {width},
+                ]}
+              />
+            );
+          })}
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };

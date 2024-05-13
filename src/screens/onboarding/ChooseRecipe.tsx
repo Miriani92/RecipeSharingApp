@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import {styles} from './ChooseRecipe.styles';
 import {images} from '../../constants/images/images';
 import {Recipe} from '../../components/molecules/Recipe';
@@ -8,6 +8,7 @@ import {SafeAreaContainer} from '../../components/atoms/SafeAreaContainer';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {colors} from '../../constants/styles/colors';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
+import {BackButton} from '../../components/molecules/BackButton';
 
 const choiceRecipeData = [
   {
@@ -35,7 +36,8 @@ export const ChooseRecipe = ({
   navigate,
 }: any) => {
   return (
-    <SafeAreaContainer>
+    <SafeAreaView
+      style={{backgroundColor: colors.background_onboarding, flex: 1}}>
       <View style={styles.wrapper}>
         <View>
           <Text style={styles.header}>Choose at least 2 recipes you like!</Text>
@@ -82,6 +84,6 @@ export const ChooseRecipe = ({
           </View>
         </PopupAnimation>
       )}
-    </SafeAreaContainer>
+    </SafeAreaView>
   );
 };

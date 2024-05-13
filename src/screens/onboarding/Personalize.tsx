@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect} from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import {PrimaryButton} from '../../components/atoms/PrimaryButton';
 import {styles} from './Personalize.styles';
 import {PopupAnimation} from '../../components/animations/PopupAnimation';
@@ -36,7 +36,8 @@ export const Personalize = () => {
   }, [startAnimation]);
 
   return (
-    <SafeAreaContainer>
+    <SafeAreaView
+      style={{backgroundColor: colors.background_onboarding, flex: 1}}>
       <View style={styles.wrapper}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
@@ -64,6 +65,6 @@ export const Personalize = () => {
           />
         </View>
       </PopupAnimation>
-    </SafeAreaContainer>
+    </SafeAreaView>
   );
 };
